@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 전적 리스트</title>
+    <link rel="stylesheet" href="{% static 'css/list.css' %}"/>
+</head>
+<body>
+    <div>현재 플레이어: </div>
+    <hr />
+
+    {% for cardgame in cardgames %}
+    <article>
+    <div>{{cardgame.attack.attack_user.name}} VS {{cardgame.defense.defense_user.attacked_user.name}}
+
+    {% if cardgame.attack == 'user8' %} 
+
+        {% if cardgame.status == '진행 중' %}
+            <p>진행 중...    ## 게임취소 버튼  </p>
+        {$ else $}
+            <p>결과: {{cardgame.status}}</p>
+        {% endif %}    
+
+    {% else %}
+    {% endif %}
+    </div>
+    </article>
+    <hr />
+    {% endfor %}
+
+</body>
+</html>
