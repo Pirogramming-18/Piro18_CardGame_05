@@ -1,5 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 
+from .models import Attack
+from .models import Defense
+from .models import User
 from .models import *
 import random
 
@@ -29,7 +33,7 @@ def list_game(request):
             'current_user': request.user,
             'count' : 1,
         }
-        return render(request, 'list_game.html', context=ctx)
+        return render(request, 'cardgame/list_game.html', context=ctx)
 
 def delete_game(request, pk):
     game = CardGame.objects.get(id=pk)
@@ -73,12 +77,12 @@ def detail_game(request,pk):
         ctx={'game':game,
         'current_user':request.user
         }
-        return render(request,template_name='detail_end.html',context=ctx)
+        return render(request,template_name='cardgame/detail_end.html',context=ctx)
     if game.status=="진행중":
         ctx={'game':game,
         'current_user':request.user
-       }
-        return render(request,template_name='detail_progress.html',context=ctx)
+        }
+        return render(request,template_name='cardgame/detail_progress.html',context=ctx)
 
 def attack_game(request):
 
@@ -106,7 +110,7 @@ def attack_game(request):
         "users":users
     }
     
-    return render(request, template_name="AD/attack.html", context=context)
+    return render(request, template_name="cardgame/attack.html", context=context)
 
 
 def defense_game(request):
@@ -131,4 +135,4 @@ def defense_game(request):
         "attack": attack
     }
     
-    return render(request, template_name="AD/defense.html", context=context)
+    return render(request, template_name="cardgame/defense.html", context=context)
