@@ -1,8 +1,11 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import *
 import random
+
+from .models import Attack
+from .models import Defense
+from .models import User
 
 # Create your views here.
 def list_game(request):
@@ -76,12 +79,6 @@ def detail_game(request,pk):
         'current_user':request.user
        }
         return render(request,template_name='detail_progress.html',context=ctx)
-=======
-from django.shortcuts import render, redirect
-
-from .models import Attack
-from .models import Defense
-from .models import User
 
 def attack_game(request):
 
@@ -135,4 +132,3 @@ def defense_game(request):
     }
     
     return render(request, template_name="AD/defense.html", context=context)
->>>>>>> yunjeong
