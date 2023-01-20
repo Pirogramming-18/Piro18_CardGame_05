@@ -1,0 +1,73 @@
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  background: linear-gradient(black, #242224);
+  height: 100vh;
+}
+.attdef {
+  display: flex;
+}
+
+.body {
+  background-color: black;
+}
+.card {
+  background-color: black !important;
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card-header {
+  font-size: 50px;
+  font-weight: bold;
+}
+#source {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  text-align: center;
+}
+.status {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.progress {
+  margin-bottom: 20px;
+}
+.card-title {
+  color: green;
+  font-size: 50px;
+  font-weight: bold;
+  margin: -10px;
+}
+
+.card-text {
+  font-size: 22px;
+  margin: -10px;
+}
+
+.card button {
+  margin-top: 20px;
+  font-size: 20px;
+  width: 70px;
+}
+
+.buttonarea {
+  font-size: 23px !important;
+}
+
+a button {
+  font-size: 25px !important;
+}
+
+.text {
+  font-size: 25px;
+}
