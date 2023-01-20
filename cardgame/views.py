@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.shortcuts import render, redirect
+from django.http.request import HttpRequest
 
 from .models import Attack
 from .models import Defense
@@ -12,6 +12,16 @@ from .models import Defense
 from .models import User
 
 # Create your views here.
+def game_list(request, *args, **kwargs):
+    cardgames = CardGame.objects.all()
+
+    return render(request, "game_list.html", {"cardgames":cardgames})
+
+def user_ranking(request:HttpRequest, *args, **kwargs):
+    users = User.objects.all().order_by("-score")
+
+    return render(request, "game_ranking.html", {"users":users})
+
 def list_game(request):
     if request.user.is_authenticated:
         # 현재 로그인한 유저가 속하는 게임들
