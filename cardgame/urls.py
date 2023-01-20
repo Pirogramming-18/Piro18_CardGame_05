@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.urls import path
 from django.urls import path, include
 from . import views
@@ -13,4 +14,15 @@ urlpatterns = [
     path('attack_game/', views.attack_game, name='attack_game'),
     path('<int:pk>/detail_game/',views.detail_game,name='detail_game'),
     path('accounts/profile/',views.profile,name="profile")
+=======
+from django.urls import path 
+
+from . import views
+
+app_name="cardgame"
+
+urlpatterns = [
+    path('attack', views.attack_game, name="attack"),
+    path('defense', views.defense_game, name="defense"),
+>>>>>>> yunjeong
 ]
