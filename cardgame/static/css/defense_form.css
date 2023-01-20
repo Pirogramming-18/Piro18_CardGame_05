@@ -1,0 +1,21 @@
+.form__container {
+  padding-top: 7rem;
+}
+
+.button__container input {
+  background-color: white;
+}
+
+.button__container input:hover {
+  background-color: rgb(36, 36, 36);
+  color: green;
+}
+
+.attack__text {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.attack_form form {
+  border: 2px solid green !important;
+}
