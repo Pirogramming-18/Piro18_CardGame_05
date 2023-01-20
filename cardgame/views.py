@@ -15,12 +15,12 @@ from .models import User
 def game_list(request, *args, **kwargs):
     cardgames = CardGame.objects.all()
 
-    return render(request, "game_list.html", {"cardgames":cardgames})
+    return render(request, "cardgame/game_list.html", {"cardgames":cardgames})
 
 def user_ranking(request:HttpRequest, *args, **kwargs):
     users = User.objects.all().order_by("-score")
 
-    return render(request, "game_ranking.html", {"users":users})
+    return render(request, "cardgame/game_ranking.html", {"users":users})
 
 def list_game(request):
     if request.user.is_authenticated:
