@@ -1,12 +1,9 @@
-from django.urls import path, include
+from django.urls import path
+
 from . import views
 
-app_name = 'cardgame'
-
-urlpatterns = [
-    path('list_game/', views.list_game, name='list_game'),
-    path('<int:pk>/delete_game/', views.delete_game, name='delete_game'),
-    path('<int:pk>/detail_game/',views.detail_game,name='detail_game'),
-    path('attack', views.attack_game, name="attack"),
-    path('defense', views.defense_game, name="defense"),
-    ]
+urlpatterns =[
+    # path('rest-auth/naver/', views.NaverLogin.as_view(), name='naver'),
+    # path('rest-auth/google/', views.GoogleLogin.as_view(), name='google'),
+ 
+ ]
