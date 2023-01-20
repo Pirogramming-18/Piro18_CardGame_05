@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from cardgame.models import Card, User, CardGame
+from cardgame.models import Card, User
 from django.http.request import HttpRequest
 
 # Create your views here.

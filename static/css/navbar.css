@@ -1,0 +1,18 @@
+.navbar-nav{
+   background-color: black;
+}
+
+.nav-item1{
+    padding-right: 950px;
+    padding-left: 50px;
+    padding-top: 10px;
+    color: #74A936;
+}
+
+.nav-link{
+    color: white;
+}
+
+.navbar-expand-md{
+    display: block;
+}
