@@ -13,5 +13,4 @@ def game_list(request, *args, **kwargs):
 def user_ranking(request:HttpRequest, *args, **kwargs):
     users = User.objects.all().order_by("-score")
 
-
-    return render(request, "game_ranking.html", {"Users":users})
+    return render(request, "game_ranking.html", {"users":users})
