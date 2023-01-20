@@ -1,11 +1,11 @@
 .navbar-nav{
-   background-color: black;
+    background-color: black;
 }
 
 .nav-item1{
     padding-right: 950px;
     padding-left: 50px;
-    padding-top: 10px;
+    padding-top: 7px;
     color: #74A936;
 }
 
@@ -15,4 +15,5 @@
 
 .navbar-expand-md{
     display: block;
+    padding-top: 0;
 }

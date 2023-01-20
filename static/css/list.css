@@ -1,0 +1,24 @@
+@import "navbar.css";
+
+#player{
+    padding-left: 49px;
+}
+
+.ltext{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 30px;
+}
+
+button{
+    background-color: black;
+    color: #8CB934;
+    border-color: #8CB934;
+    border-width: unset;
+    border-radius: 5px;
+}
+
+a{
+    text-decoration: none;
+}
