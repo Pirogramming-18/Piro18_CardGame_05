@@ -44,54 +44,59 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'accounts',
+    'rest_framework.authtoken',
+    'django.contrib.sites',
     
     #sns 로그인
-    # # django-rest-framework
-    # 'rest_framework',
-    # 'rest_framework_simplejwt.token_blacklist',
-    # # dj-rest-auth
-    # 'dj_rest_auth',
-    # 'dj_rest_auth.registration',
-    # # django-allauth
-    # 'allauth',
-    # 'allauth.account',
-    # 'allauth.socialaccount',
-    # 'allauth.socialaccount.providers.google',
+    # django-rest-framework
+    'rest_framework',
+    'rest_framework_simplejwt.token_blacklist',
+    # dj-rest-auth
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
+    # django-allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     
 ]
+
+SITE_ID = 1
+AUTH_USER_MODEL = 'accounts.User' 
+
 
 #django 로그인
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-# SITE_ID = 1
-# AUTH_USER_MODEL = 'accounts.User' 
 
 #sns로그인
-# REST_FRAMEWORK = {
-#     'DEFAULT_PERMISSION_CLASSES': (
-#         'rest_framework.permissions.IsAuthenticated',
-#     ),
-#     'DEFAULT_AUTHENTICATION_CLASSES': (
-#         'rest_framework.authentication.SessionAuthentication',
-#         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
-#     ),
-# }
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+    ),
+}
 
-# ACCOUNT_USER_MODEL_USERNAME_FIELD = None # username 필드 사용 x
-# ACCOUNT_EMAIL_REQUIRED = True            # email 필드 사용 o
-# ACCOUNT_USERNAME_REQUIRED = False        # username 필드 사용 x
-# ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None # username 필드 사용 x
+ACCOUNT_EMAIL_REQUIRED = True            # email 필드 사용 o
+ACCOUNT_USERNAME_REQUIRED = False        # username 필드 사용 x
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
-# REST_USE_JWT = True
-# from datetime import timedelta
-# SIMPLE_JWT = {
-#     'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
-#     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
-#     'ROTATE_REFRESH_TOKENS': False,
-#     'BLACKLIST_AFTER_ROTATION': True,
-# }
-##
+REST_USE_JWT = True
+from datetime import timedelta
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': True,
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

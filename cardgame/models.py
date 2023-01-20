@@ -9,13 +9,13 @@ class Card(models.Model):
 	def __str__(self):
 		return str(self.card_num)
 
-class User(AbstractUser):
+class User(models.Model):
     
-	first_name=None
-	last_name=None #필드 삭제
+	# first_name=None
+	# last_name=None #필드 삭제
     
-	email=models.EmailField(null=True)
-	name = models.CharField(max_length=64)
+	# email=models.EmailField(null=True)
+	# name = models.CharField(max_length=64)
 	score = models.IntegerField()
 	card = models.ForeignKey(Card, on_delete=models.CASCADE, related_name="User_game")
 
@@ -23,7 +23,7 @@ class User(AbstractUser):
 class Attack(models.Model):
 	attack_user = models.ForeignKey(User, on_delete=models.CASCADE)
 	num = models.ForeignKey(Card, on_delete=models.CASCADE)
-	attacked_user = models.ForeignKey(User, on_delete=models.CASCADE)
+	#attacked_user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Defense(models.Model):
 	defense_user = models.ForeignKey(Attack, on_delete=models.CASCADE)
